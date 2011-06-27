@@ -1,4 +1,6 @@
 FrozenBirds::Application.routes.draw do
+  resources :sql_templates
+
   resources :statuses
 
   resources :subdomains

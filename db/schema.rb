@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110627180819) do
+ActiveRecord::Schema.define(:version => 20110627200407) do
+
+  create_table "sql_templates", :force => true do |t|
+    t.text     "body"
+    t.string   "path"
+    t.string   "format"
+    t.string   "locale"
+    t.string   "handler"
+    t.boolean  "partial",    :default => false
+    t.string   "subdomain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "statuses", :force => true do |t|
     t.text     "message"
