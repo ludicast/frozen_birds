@@ -1,0 +1,5 @@
+<hr />
+<div>
+	<p>Date: <%= status.created_at %></p>
+	<p>Status: <%= status.message %></p>
+</div>
