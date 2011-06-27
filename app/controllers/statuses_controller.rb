@@ -2,7 +2,12 @@ class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json
   def index
-    @statuses = Status.all
+    if request.subdomain.blank?
+      @statuses = Status.all
+    else    
+      subdomain = Subdomain.where(:name => request.subdomain).first
+      @statuses = subdomain.statuses
+    end
 
     respond_to do |format|
       format.html # index.html.erb
