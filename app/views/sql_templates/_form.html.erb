@@ -36,8 +36,8 @@
     <%= f.check_box :partial %>
   </div>
   <div class="field">
-    <%= f.label :subdomain %><br />
-    <%= f.text_field :subdomain %>
+    <%= f.label :subdomain_id %><br />
+    <%= f.collection_select :subdomain_id, Subdomain.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

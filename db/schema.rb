@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(:version => 20110627200407) do
     t.string   "format"
     t.string   "locale"
     t.string   "handler"
-    t.boolean  "partial",    :default => false
-    t.string   "subdomain"
+    t.boolean  "partial",      :default => false
+    t.integer  "subdomain_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

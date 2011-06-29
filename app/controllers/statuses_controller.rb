@@ -1,4 +1,7 @@
 class StatusesController < ApplicationController
+
+  prepend_view_path SqlTemplate::Resolver.instance 
+
   # GET /statuses
   # GET /statuses.json
   def index
@@ -6,6 +9,7 @@ class StatusesController < ApplicationController
       @statuses = Status.all
     else    
       subdomain = Subdomain.where(:name => request.subdomain).first
+      Thread.current[:subdomain] = subdomain
       @statuses = subdomain.statuses
     end
 

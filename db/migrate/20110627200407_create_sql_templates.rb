@@ -8,7 +8,7 @@ class CreateSqlTemplates < ActiveRecord::Migration
       t.string :handler
       t.boolean :partial, :default => false 
 
-      t.string :subdomain
+      t.integer :subdomain_id
 
       t.timestamps
     end
